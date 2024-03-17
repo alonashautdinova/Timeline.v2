@@ -1,0 +1,27 @@
+<form action="/post" method="POST">
+  <div class="post-form">
+    <div class="mb-3">
+      <label for="namePost" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="namePost"
+        placeholder="Name"
+        name="name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="messagePost" class="form-label">Message</label>
+      <textarea
+        class="form-control"
+        id="messagePost"
+        rows="3"
+        placeholder="Message"
+        name="message"
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary postBtn">
+      Post a Message
+    </button>
+  </div>
+</form>

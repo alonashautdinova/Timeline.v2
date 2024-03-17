@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.post-form {
+  margin: 3% 10%;
+}
+.post-container {
+  padding: 2% 4%;
+  margin: 2% 12%;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+.comments {
+  margin: 0 5%;
+}
+
+.comment {
+  margin: 3%;
+}

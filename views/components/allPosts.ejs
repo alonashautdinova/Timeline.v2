@@ -1,0 +1,31 @@
+<div class="allPosts">
+  <% if (posts.length > 0) { %> <% posts.forEach(post => { %>
+  <div class="post-container">
+    <!-- Display post information -->
+    <p class="creationDate">
+      <%= new Date(post.createdAt).toLocaleDateString() %>
+    </p>
+    <h3 class="postAuthor"><%= post.name %></h3>
+    <p class="postMsg"><%= post.message %></p>
+
+    <!-- Display comments for this post -->
+    <% if (post.comments && post.comments.length > 0) { %>
+    <div class="comments">
+      <% post.comments.forEach(comment => { %>
+      <div class="comment">
+        <p class="commentDate">
+          <%= new Date(comment.createdAt).toLocaleDateString() %>
+        </p>
+        <p class="commentBody"><%= comment.message %></p>
+        <!-- Display other comment information as needed -->
+      </div>
+      <% }); %>
+    </div>
+    <% } else { %>
+    <p>No comments for this post.</p>
+    <% } %> <%- include("./addComment", { post: post }) %>
+  </div>
+  <% }); %> <% } else { %>
+  <p>No posts were found.</p>
+  <% } %>
+</div>

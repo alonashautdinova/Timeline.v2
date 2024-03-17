@@ -1,0 +1,15 @@
+    <form action="/comment" method="POST">
+      <input type="hidden" name="postId" value="<%= post._id %>" />
+      <div class="mb-3">
+        <label for="commentMsg" class="form-label">Post a comment</label>
+        <textarea
+          class="form-control"
+          id="commentMsg"
+          rows="3"
+          name="message"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-success commentBtn">
+        Post a comment
+      </button>
+    </form>
