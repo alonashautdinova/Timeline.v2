@@ -1,3 +1,6 @@
+//require env file
+require("dotenv").config();
+
 const http = require("http");
 const router = require("./config/router");
 const _ = require("lodash");

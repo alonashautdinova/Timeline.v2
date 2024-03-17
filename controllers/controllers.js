@@ -1,3 +1,4 @@
+const { validationResult } = require("express-validator");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
 const getHomepage = async (req, res) => {
@@ -45,6 +46,15 @@ const postComment = (req, res) => {
       console.log(err.message);
       res.send(err.message);
     });
+};
+
+// Add validation middleware for a form submission
+exports.validateFormData = (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+  next();
 };
 
 module.exports = {
